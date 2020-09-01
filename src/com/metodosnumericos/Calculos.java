@@ -31,7 +31,7 @@ public class Calculos {
             xAnterior = xActual;
             iteraciones++;
 
-            if ((ejecutarFormula(limiteInferior) * ejecutarFormula(limiteSuperior)) < 0) {
+            if ((ejecutarFormula(limiteInferior) * ejecutarFormula(xActual)) < 0) {
                 limiteSuperior = xActual;
             } else {
                 limiteInferior = xActual;
