@@ -15,15 +15,15 @@ public class MetodoBiseccion {
         System.out.println("Metodo Biseccion");
         System.out.println("Por favor introduzca el valor del limite inferior: ");
         Scanner entradaEscaner = new Scanner(System.in);
-        limiteInferior = Float.parseFloat(entradaEscaner.next());
+        limiteInferior = Double.parseDouble(entradaEscaner.next());
 
         System.out.println("Por favor introduzca el valor del limite superior: ");
         entradaEscaner = new Scanner(System.in);
-        limiteSuperior = Float.parseFloat(entradaEscaner.next());
+        limiteSuperior = Double.parseDouble(entradaEscaner.next());
 
         System.out.println("Por favor introduzca el valor del error: ");
         entradaEscaner = new Scanner(System.in);
-        error = Float.parseFloat(entradaEscaner.next());
+        error = Double.parseDouble(entradaEscaner.next());
 
         xActual = (limiteInferior + limiteSuperior) / 2;
         iteraciones = 0;
