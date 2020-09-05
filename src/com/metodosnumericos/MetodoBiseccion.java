@@ -30,7 +30,20 @@ public class MetodoBiseccion {
 
         while (Math.abs(xActual - xAnterior) > error) {
             xAnterior = xActual;
-            iteraciones++;
+
+            if (f(limiteInferior) == 0) {
+                xActual = limiteInferior;
+                break;
+            }
+
+            if (f(limiteSuperior) == 0) {
+                xActual = limiteSuperior;
+                break;
+            }
+
+            if (f(xActual) == 0) {
+                break;
+            }
 
             if ((f(limiteInferior) * f(xActual)) < 0) {
                 limiteSuperior = xActual;
@@ -38,6 +51,7 @@ public class MetodoBiseccion {
                 limiteInferior = xActual;
             }
             xActual = (limiteInferior + limiteSuperior) / 2;
+            iteraciones++;
         }
         System.out.println("La raiz es: " + xActual + " y el numero de iteraciones fueron: " + iteraciones);
     }
