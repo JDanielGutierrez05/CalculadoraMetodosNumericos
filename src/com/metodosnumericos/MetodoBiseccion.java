@@ -6,7 +6,7 @@ public class MetodoBiseccion {
 
     double limiteInferior;
     double limiteSuperior;
-    Integer iteraciones;
+    Integer iteraciones = 0;
     double xAnterior = Double.parseDouble("1000");
     double xActual;
     double error;
@@ -26,7 +26,6 @@ public class MetodoBiseccion {
         error = Double.parseDouble(entradaEscaner.next());
 
         xActual = (limiteInferior + limiteSuperior) / 2;
-        iteraciones = 0;
 
         while (Math.abs(xActual - xAnterior) > error) {
             xAnterior = xActual;

@@ -6,13 +6,13 @@ public class MetodoReglaFalsa {
 
     double limiteInferior;
     double limiteSuperior;
-    Integer iteraciones;
+    Integer iteraciones = 0;
     double xAnterior = Double.parseDouble("1000");
     double xActual;
     double error;
 
     public void calcularDatos() {
-        System.out.println("*****Metodo Regla Falsa*****");
+        System.out.println("Metodo Regla Falsa*****");
         System.out.println("Por favor introduzca el valor del limite inferior: ");
         Scanner entradaEscaner = new Scanner(System.in);
         limiteInferior = Double.parseDouble(entradaEscaner.next());
@@ -29,7 +29,6 @@ public class MetodoReglaFalsa {
 
         while (Math.abs(xActual - xAnterior) > error) {
             xAnterior = xActual;
-            iteraciones++;
 
             if (f(limiteInferior) == 0) {
                 xActual = limiteInferior;
@@ -51,7 +50,7 @@ public class MetodoReglaFalsa {
                 limiteInferior = xActual;
             }
             xActual = limiteInferior - (f(limiteInferior) * (limiteInferior - limiteSuperior) / (f(limiteInferior) - f(limiteSuperior)));
-            iteraciones = 0;
+            iteraciones++;
         }
         System.out.println("La raiz es: " + xActual + " y el numero de iteraciones fueron: " + iteraciones);
     }
