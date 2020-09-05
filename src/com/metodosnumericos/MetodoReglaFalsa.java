@@ -25,7 +25,7 @@ public class MetodoReglaFalsa {
         entradaEscaner = new Scanner(System.in);
         error = Double.parseDouble(entradaEscaner.next());
 
-        xActual = limiteInferior - (f(limiteInferior) * (limiteInferior - limiteSuperior) / f(limiteInferior) - f(limiteSuperior));
+        xActual = limiteInferior - (f(limiteInferior) * (limiteInferior - limiteSuperior) / (f(limiteInferior) - f(limiteSuperior)));
         iteraciones = 0;
 
         while (Math.abs(xActual - xAnterior) > error) {
@@ -37,12 +37,12 @@ public class MetodoReglaFalsa {
             } else {
                 limiteInferior = xActual;
             }
-            xActual = limiteInferior - (f(limiteInferior) * (limiteInferior - limiteSuperior) / f(limiteInferior) - f(limiteSuperior));
+            xActual = limiteInferior - (f(limiteInferior) * (limiteInferior - limiteSuperior) / (f(limiteInferior) - f(limiteSuperior)));
         }
         System.out.println("La raiz es: " + xActual + " y el numero de iteraciones fueron: " + iteraciones);
     }
 
     private double f(double valor) {
-        return Math.sin(Math.pow(valor, 2)) + Math.pow(valor, 2) - 3;
+        return Math.sin(Math.pow(valor, 2) + 4);
     }
 }
