@@ -12,7 +12,7 @@ public class MetodoBiseccion {
     double error;
 
     public void calcularDatos() {
-        System.out.println("Metodo Biseccion");
+        System.out.println("*****Metodo Biseccion*****");
         System.out.println("Por favor introduzca el valor del limite inferior: ");
         Scanner entradaEscaner = new Scanner(System.in);
         limiteInferior = Double.parseDouble(entradaEscaner.next());
