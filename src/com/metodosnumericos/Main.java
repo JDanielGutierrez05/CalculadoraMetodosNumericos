@@ -7,7 +7,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Seleccione el metodo a ejecutar: ");
         System.out.println("1. Metodo de Biseccion.");
-        System.out.println("2. Metodo de  de Regla Falsa.");
+        System.out.println("2. Metodo de Regla Falsa.");
+        System.out.println("3. Metodo de Newton.");
 
         Scanner entradaEscaner = new Scanner(System.in);
         int opcionSeleccionada = Integer.parseInt(entradaEscaner.next());
@@ -21,6 +22,11 @@ public class Main {
             case 2:
                 MetodoReglaFalsa metodoReglaFalsa = new MetodoReglaFalsa();
                 metodoReglaFalsa.calcularDatos();
+                break;
+
+            case 3:
+                MetodoNewton metodoNewton = new MetodoNewton();
+                metodoNewton.calcularDatos();
                 break;
 
             default:
