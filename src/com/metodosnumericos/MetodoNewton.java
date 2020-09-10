@@ -12,50 +12,28 @@ public class MetodoNewton {
     Node nodoFuncion;
     Node nodoDerivada;
 
-    double limiteInferior;
-    double limiteSuperior;
+    double xActual;
     Integer iteraciones = 0;
     double xAnterior = Double.parseDouble("1000");
-    double xActual;
     double error;
-    String funcionaDerivar;
+    String funcion;
 
     public void calcularDatos() {
-        System.out.println("ingrese la funcion a derivar: ");
+        System.out.println("Metodo Regla Falsa*****");
+        System.out.println("Por favor introduzca el valor de la formula: ");
         Scanner entradaEscaner = new Scanner(System.in);
-        derivar(entradaEscaner.next());
+        xActual = Double.parseDouble(entradaEscaner.next());
 
-      /*  System.out.println("Metodo Regla Falsa*****");
-        System.out.println("Por favor introduzca el valor del limite inferior: ");
-        Scanner entradaEscaner = new Scanner(System.in);
-        limiteInferior = Double.parseDouble(entradaEscaner.next());
-
-        System.out.println("Por favor introduzca el valor del limite superior: ");
+        System.out.println("ingrese la funcion: ");
         entradaEscaner = new Scanner(System.in);
-        limiteSuperior = Double.parseDouble(entradaEscaner.next());
+        funcion = entradaEscaner.next();
 
         System.out.println("Por favor introduzca el valor del error: ");
         entradaEscaner = new Scanner(System.in);
         error = Double.parseDouble(entradaEscaner.next());
 
-        xActual = limiteInferior - (f(limiteInferior) * (limiteInferior - limiteSuperior) / (f(limiteInferior) - f(limiteSuperior)));
-
         while (Math.abs(xActual - xAnterior) > error) {
             xAnterior = xActual;
-
-            if (f(limiteInferior) == 0) {
-                xActual = limiteInferior;
-                break;
-            }
-
-            if (f(limiteSuperior) == 0) {
-                xActual = limiteSuperior;
-                break;
-            }
-
-            if (f(xActual) == 0) {
-                break;
-            }
 
             if ((f(limiteInferior) * f(xActual)) < 0) {
                 limiteSuperior = xActual;
@@ -65,7 +43,7 @@ public class MetodoNewton {
             xActual = limiteInferior - (f(limiteInferior) * (limiteInferior - limiteSuperior) / (f(limiteInferior) - f(limiteSuperior)));
             iteraciones++;
         }
-        System.out.println("La raiz es: " + xActual + " y el numero de iteraciones fueron: " + iteraciones);*/
+        System.out.println("La raiz es: " + xActual + " y el numero de iteraciones fueron: " + iteraciones);
     }
 
     private double f(double valor) {
@@ -73,7 +51,7 @@ public class MetodoNewton {
     }
 
 
-    public void derivar(String funcion) {
+    public void derivar(String funcion, double valor) {
         try {
             this.djep = new DJep();
             // agrega funciones estandares cos(x), sin(x)
