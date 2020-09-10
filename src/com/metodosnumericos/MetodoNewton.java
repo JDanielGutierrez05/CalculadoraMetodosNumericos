@@ -33,7 +33,7 @@ public class MetodoNewton {
         error = Double.parseDouble(entradaEscaner.next());
 
         while (Math.abs(xActual - xAnterior) > error) {
-            xAnterior = xActual;
+        /*    xAnterior = xActual;
 
             if ((f(limiteInferior) * f(xActual)) < 0) {
                 limiteSuperior = xActual;
@@ -41,7 +41,7 @@ public class MetodoNewton {
                 limiteInferior = xActual;
             }
             xActual = limiteInferior - (f(limiteInferior) * (limiteInferior - limiteSuperior) / (f(limiteInferior) - f(limiteSuperior)));
-            iteraciones++;
+            iteraciones++;*/
         }
         System.out.println("La raiz es: " + xActual + " y el numero de iteraciones fueron: " + iteraciones);
     }
@@ -51,7 +51,7 @@ public class MetodoNewton {
     }
 
 
-    public void derivar(String funcion, double valor) {
+    public double derivar(String funcion, double valor) {
         try {
             this.djep = new DJep();
             // agrega funciones estandares cos(x), sin(x)
@@ -86,11 +86,15 @@ public class MetodoNewton {
 
             // Convertimos el valor simplificado en un String
             funcion = this.djep.toString(this.nodoDerivada);
-            System.out.println("la derivada es: " + funcion);
 
+            //hacer la operacion de la formula reemplazando a X con el valor
+
+            System.out.println("la derivada es: " + funcion);
         } catch (ParseException e) {
             funcion = "NaN";
             System.out.println("Error: " + e.getErrorInfo());
         }
+        return 0d;
     }
+
 }
