@@ -19,8 +19,8 @@ public class MetodoNewton {
     String funcion;
 
     public void calcularDatos() {
-        System.out.println("Metodo Regla Falsa*****");
-        System.out.println("Por favor introduzca el valor de la formula: ");
+        System.out.println("*****Metodo de Newton*****");
+        System.out.println("Por favor introduzca el valor para la formula: ");
         Scanner entradaEscaner = new Scanner(System.in);
         xActual = Double.parseDouble(entradaEscaner.next());
 
@@ -33,15 +33,19 @@ public class MetodoNewton {
         error = Double.parseDouble(entradaEscaner.next());
 
         while (Math.abs(xActual - xAnterior) > error) {
-        /*    xAnterior = xActual;
+            xAnterior = xActual;
 
-            if ((f(limiteInferior) * f(xActual)) < 0) {
+            if (f(xActual) == 0) {
+                break;
+            }
+
+/*            if ((f(limiteInferior) * f(xActual)) < 0) {
                 limiteSuperior = xActual;
             } else {
                 limiteInferior = xActual;
             }
-            xActual = limiteInferior - (f(limiteInferior) * (limiteInferior - limiteSuperior) / (f(limiteInferior) - f(limiteSuperior)));
-            iteraciones++;*/
+            xActual = limiteInferior - (f(limiteInferior) * (limiteInferior - limiteSuperior) / (f(limiteInferior) - f(limiteSuperior)));*/
+            iteraciones++;
         }
         System.out.println("La raiz es: " + xActual + " y el numero de iteraciones fueron: " + iteraciones);
     }
