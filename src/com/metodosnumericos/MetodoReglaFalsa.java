@@ -1,5 +1,8 @@
 package com.metodosnumericos;
 
+import org.mariuszgromada.math.mxparser.Argument;
+import org.mariuszgromada.math.mxparser.Expression;
+
 import java.util.Scanner;
 
 public class MetodoReglaFalsa {
@@ -9,12 +12,18 @@ public class MetodoReglaFalsa {
     Integer iteraciones = 0;
     double xAnterior = Double.parseDouble("1000");
     double xActual;
+    String funcion;
     double error;
 
     public void calcularDatos() {
         System.out.println("Metodo Regla Falsa*****");
-        System.out.println("Por favor introduzca el valor del limite inferior: ");
+
+        System.out.println("ingrese la funcion: ");
         Scanner entradaEscaner = new Scanner(System.in);
+        funcion = entradaEscaner.nextLine().toLowerCase().trim();
+
+        System.out.println("Por favor introduzca el valor del limite inferior: ");
+        entradaEscaner = new Scanner(System.in);
         limiteInferior = Double.parseDouble(entradaEscaner.next());
 
         System.out.println("Por favor introduzca el valor del limite superior: ");
@@ -25,37 +34,39 @@ public class MetodoReglaFalsa {
         entradaEscaner = new Scanner(System.in);
         error = Double.parseDouble(entradaEscaner.next());
 
-        xActual = limiteInferior - (f(limiteInferior) * (limiteSuperior - limiteInferior) / (f(limiteSuperior) - f(limiteInferior)));
+        xActual = limiteInferior - (f(funcion, limiteInferior) * (limiteSuperior - limiteInferior) / (f(funcion, limiteSuperior) - f(funcion, limiteInferior)));
 
         while (Math.abs(xActual - xAnterior) > error) {
             xAnterior = xActual;
 
-            if (f(limiteInferior) == 0) {
+            if (f(funcion, limiteInferior) == 0) {
                 xActual = limiteInferior;
                 break;
             }
 
-            if (f(limiteSuperior) == 0) {
+            if (f(funcion, limiteSuperior) == 0) {
                 xActual = limiteSuperior;
                 break;
             }
 
-            if (f(xActual) == 0) {
+            if (f(funcion, xActual) == 0) {
                 break;
             }
 
-            if ((f(limiteInferior) * f(xActual)) < 0) {
+            if ((f(funcion, limiteInferior) * f(funcion, xActual)) < 0) {
                 limiteSuperior = xActual;
             } else {
                 limiteInferior = xActual;
             }
-            xActual = limiteInferior - (f(limiteInferior) * (limiteSuperior - limiteInferior) / (f(limiteSuperior) - f(limiteInferior)));
+            xActual = limiteInferior - (f(funcion, limiteInferior) * (limiteSuperior - limiteInferior) / (f(funcion, limiteSuperior) - f(funcion, limiteInferior)));
             iteraciones++;
         }
         System.out.println("La raiz es: " + xActual + " y el numero de iteraciones fueron: " + iteraciones);
     }
 
-    private double f(double valor) {
-        return Math.sin(Math.pow(valor, 2) + 4);
+    private double f(String funcion, double valor) {
+        Expression funcionResuelta = new Expression(funcion, new Argument("x = " + valor));
+        //mXparser.consolePrintln("funcion es: " + funcionResuelta.getExpressionString() + ", valor es: " + valor + ", resultado es: " + funcionResuelta.calculate());
+        return funcionResuelta.calculate();
     }
 }
