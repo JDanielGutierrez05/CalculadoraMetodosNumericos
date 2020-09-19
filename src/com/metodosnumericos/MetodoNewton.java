@@ -28,23 +28,16 @@ public class MetodoNewton {
         entradaEscaner = new Scanner(System.in);
         error = Double.parseDouble(entradaEscaner.next());
 
-/*        while (Math.abs(xActual - xAnterior) > error) {
+        while (Math.abs(xActual - xAnterior) > error) {
             xAnterior = xActual;
 
-            if (f(xActual) == 0) {
+            if (f(funcion, xActual) == 0) {
                 break;
             }
-
-*//*            if ((f(limiteInferior) * f(xActual)) < 0) {
-                limiteSuperior = xActual;
-            } else {
-                limiteInferior = xActual;
-            }
-            xActual = limiteInferior - (f(limiteInferior) * (limiteInferior - limiteSuperior) / (f(limiteInferior) - f(limiteSuperior)));*//*
+            xActual = xActual - (f(funcion, xActual) / fDerivada(funcion, xActual));
             iteraciones++;
-        }*/
-        f(funcion, xActual);
-        //System.out.println("La raiz es: " + xActual + " y el numero de iteraciones fueron: " + iteraciones);
+        }
+        System.out.println("La raiz es: " + xActual + " y el numero de iteraciones fueron: " + iteraciones);
     }
 
     private double f(String funcion, double valor) {
@@ -53,8 +46,9 @@ public class MetodoNewton {
         return funcionResuelta.calculate();
     }
 
-    private void fDerivada(String funcion, double valor) {
+    private double fDerivada(String funcion, double valor) {
         Expression funcionResuelta = new Expression("der(" + funcion + ", x)", new Argument("x = " + valor));
-        mXparser.consolePrintln("funcion a derivar: " + funcion + ", funcion derivada es: " + funcionResuelta.calculate());
+        //mXparser.consolePrintln("funcion a derivar: " + funcion + ", funcion derivada es: " + funcionResuelta.calculate());
+        return funcionResuelta.calculate();
     }
 }
