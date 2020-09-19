@@ -36,19 +36,18 @@ public class MetodoNewton {
             }
             xActual = xActual - (f(funcion, xActual) / fDerivada(funcion, xActual));
             iteraciones++;
+            System.out.println("La raiz es: " + xActual + " en la iteracion: " + iteraciones);
         }
-        System.out.println("La raiz es: " + xActual + " y el numero de iteraciones fueron: " + iteraciones);
+        System.out.println("La raiz final es: " + xActual + " y el numero de iteraciones fueron: " + iteraciones);
     }
 
     private double f(String funcion, double valor) {
         Expression funcionResuelta = new Expression(funcion, new Argument("x = " + valor));
-        //mXparser.consolePrintln("funcion es: " + funcionResuelta.getExpressionString() + ", valor es: " + valor + ", resultado es: " + funcionResuelta.calculate());
         return funcionResuelta.calculate();
     }
 
     private double fDerivada(String funcion, double valor) {
         Expression funcionResuelta = new Expression("der(" + funcion + ", x)", new Argument("x = " + valor));
-        //mXparser.consolePrintln("funcion a derivar: " + funcion + ", funcion derivada es: " + funcionResuelta.calculate());
         return funcionResuelta.calculate();
     }
 }

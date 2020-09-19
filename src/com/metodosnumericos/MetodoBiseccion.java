@@ -60,13 +60,13 @@ public class MetodoBiseccion {
             }
             xActual = (limiteInferior + limiteSuperior) / 2;
             iteraciones++;
+            System.out.println("La raiz es: " + xActual + " en la iteracion: " + iteraciones);
         }
-        System.out.println("La raiz es: " + xActual + " y el numero de iteraciones fueron: " + iteraciones);
+        System.out.println("La raiz final es: " + xActual + " y el numero de iteraciones fueron: " + iteraciones);
     }
 
     private double f(String funcion, double valor) {
         Expression funcionResuelta = new Expression(funcion, new Argument("x = " + valor));
-        //mXparser.consolePrintln("funcion es: " + funcionResuelta.getExpressionString() + ", valor es: " + valor + ", resultado es: " + funcionResuelta.calculate());
         return funcionResuelta.calculate();
     }
 }
