@@ -2,7 +2,6 @@ package com.metodosnumericos;
 
 import org.mariuszgromada.math.mxparser.Argument;
 import org.mariuszgromada.math.mxparser.Expression;
-import org.mariuszgromada.math.mxparser.mXparser;
 
 import java.util.Scanner;
 
@@ -34,7 +33,7 @@ public class MetodoNewton {
             if (f(funcion, xActual) == 0) {
                 break;
             }
-            xActual = xActual - (f(funcion, xActual) / fDerivada(funcion, xActual));
+            xActual = xAnterior - (f(funcion, xAnterior) / fDerivada(funcion, xAnterior));
             iteraciones++;
             System.out.println("La raiz es: " + xActual + " en la iteracion: " + iteraciones);
         }
