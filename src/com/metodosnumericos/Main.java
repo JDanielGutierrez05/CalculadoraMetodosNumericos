@@ -9,6 +9,7 @@ public class Main {
         System.out.println("1. Metodo de Biseccion.");
         System.out.println("2. Metodo de Regla Falsa.");
         System.out.println("3. Metodo de Newton.");
+        System.out.println("4. Metodo de la secante.");
 
         Scanner entradaEscaner = new Scanner(System.in);
         int opcionSeleccionada = Integer.parseInt(entradaEscaner.next());
@@ -29,6 +30,10 @@ public class Main {
                 metodoNewton.calcularDatos();
                 break;
 
+            case 4:
+                MetodoSecante metodoSecante = new MetodoSecante();
+                metodoSecante.calcularDatos();
+                break;
             default:
                 break;
         }
