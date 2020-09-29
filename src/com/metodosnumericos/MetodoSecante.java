@@ -7,11 +7,7 @@ import java.util.Scanner;
 
 public class MetodoSecante {
 
-    double limiteInferior;
-    double limiteSuperior;
-    Integer iteraciones = 0;
-    double xAnterior = Double.parseDouble("1000");
-    double xActual;
+    int iteraciones = 0;
     double x0, x1, x2;
     String funcion;
     double error;
