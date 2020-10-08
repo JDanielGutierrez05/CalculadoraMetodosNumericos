@@ -1,5 +1,7 @@
 package com.metodosnumericos;
 
+import com.metodosnumericos.diferenciacionnumerica.MenuDiferenciacionNumerica;
+
 import java.util.Scanner;
 
 public class Main {
@@ -10,6 +12,7 @@ public class Main {
         System.out.println("2. Metodo de Regla Falsa.");
         System.out.println("3. Metodo de Newton.");
         System.out.println("4. Metodo de la secante.");
+        System.out.print("5. Metodos de diferenciacion numerica");
 
         Scanner entradaEscaner = new Scanner(System.in);
         int opcionSeleccionada = Integer.parseInt(entradaEscaner.next());
@@ -33,6 +36,11 @@ public class Main {
             case 4:
                 MetodoSecante metodoSecante = new MetodoSecante();
                 metodoSecante.calcularDatos();
+                break;
+
+            case 5:
+                MenuDiferenciacionNumerica menuDiferenciacionNumerica = new MenuDiferenciacionNumerica();
+                menuDiferenciacionNumerica.selecionarMetodoDifNumerica();
                 break;
             default:
                 break;
