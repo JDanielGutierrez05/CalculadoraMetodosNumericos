@@ -12,7 +12,7 @@ public class Main {
         System.out.println("2. Metodo de Regla Falsa.");
         System.out.println("3. Metodo de Newton.");
         System.out.println("4. Metodo de la secante.");
-        System.out.println("5. Metodos de diferenciacion numerica");
+        System.out.println("5. Metodos de diferenciacion numerica.");
 
         Scanner entradaEscaner = new Scanner(System.in);
         int opcionSeleccionada = Integer.parseInt(entradaEscaner.next());
