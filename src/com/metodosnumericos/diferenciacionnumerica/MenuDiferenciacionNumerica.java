@@ -1,9 +1,5 @@
 package com.metodosnumericos.diferenciacionnumerica;
 
-import com.metodosnumericos.MetodoBiseccion;
-import com.metodosnumericos.MetodoNewton;
-import com.metodosnumericos.MetodoReglaFalsa;
-
 import java.util.Scanner;
 
 public class MenuDiferenciacionNumerica {
