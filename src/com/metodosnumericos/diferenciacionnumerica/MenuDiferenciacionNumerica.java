@@ -3,18 +3,29 @@ package com.metodosnumericos.diferenciacionnumerica;
 import java.util.Scanner;
 
 public class MenuDiferenciacionNumerica {
+    
+    MenuTipoDiferenciacion menuTipoDiferenciacion = new MenuTipoDiferenciacion();
+    
 
     public void selecionarMetodoDifNumerica() {
-        System.out.println("1. Formula de diferenciacion numerica.");
-        System.out.println("2. Formula de los 2 puntos.");
-        System.out.println("3. Formula de los 3 puntos.");
-
+        System.out.println("Seleccione el tipo de entrada");
+        System.out.println("1. Para ingresar la tabla de datos");
+        System.out.println("2. Para ingresar la formula ");
+        
         Scanner entradaEscaner = new Scanner(System.in);
         int opcionSeleccionada = Integer.parseInt(entradaEscaner.next());
 
         switch (opcionSeleccionada) {
-            default:
+            case 1:
+                menuTipoDiferenciacion.selecionarTipoMetodoDifNumerica(); 
+               break;
+            case 2: 
+                menuTipoDiferenciacion.selecionarTipoMetodoDifNumerica();
+
                 break;
+             default:
+             break;   
+            
         }
     }
 
