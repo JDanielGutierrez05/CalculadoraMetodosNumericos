@@ -52,12 +52,32 @@ public class CalcularMetodosDiferenciacionNum {
         entradaEscaner = new Scanner(System.in);
         valorh = Double.parseDouble(entradaEscaner.next());
 
+       
+        fx0 = (1/(2*valorh))*(-3*f(funcion,(pevaluar))+4*f(funcion,(pevaluar+valorh))-f(funcion,(pevaluar+(2*valorh))));
 
-        fx0 = (1 / (2 * valorh)) * (-3 * f(funcion, (pevaluar)) + 4 * f(funcion, (pevaluar + valorh)) - f(funcion, (pevaluar + (2 * valorh))));
+        //fx0 = (1 / (2 * valorh)) * (-3 * f(funcion, (pevaluar)) + 4 * f(funcion, (pevaluar + valorh)) - f(funcion, (pevaluar + (2 * valorh))));
 
         System.out.println("La derivada de tres puntos con la formula 1 es : " + fx0);
     }
 
+    public void calcularDerivadaTresPuntosF2() {
+        System.out.println("Por favor introduzca la funcion: ");
+        Scanner entradaEscaner = new Scanner(System.in);
+        funcion = entradaEscaner.nextLine().toLowerCase().trim();
+
+        System.out.println("Por favor ingrese el punto: ");
+        entradaEscaner = new Scanner(System.in);
+        pevaluar = Double.parseDouble(entradaEscaner.next());
+
+        System.out.println("Por favor ingrese el valor de h: ");
+        entradaEscaner = new Scanner(System.in);
+        valorh = Double.parseDouble(entradaEscaner.next());
+       
+        fx0 = (1/(2*valorh))*(-3*f(funcion,(pevaluar))+4*f(funcion,(pevaluar+valorh))-f(funcion,(pevaluar+(2*valorh))));
+        //fx0 = (1 / (2 * valorh)) * (-3 * f(funcion, (pevaluar)) + 4 * f(funcion, (pevaluar + valorh)) - f(funcion, (pevaluar + (2 * valorh))));
+
+        System.out.println("La derivada de tres puntos con la formula 2 es : " + fx0);
+    }
     public void calcularSegundaDerivada() {
 
     }
