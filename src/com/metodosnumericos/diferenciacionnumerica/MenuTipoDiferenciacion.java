@@ -29,8 +29,9 @@ public class MenuTipoDiferenciacion {
                 menuFormAplicar.selecionarFormula();
 
             case 3:
+                CalcularMetodosDiferenciacionNum calculosDifNumerica1 = new CalcularMetodosDiferenciacionNum(); 
+                calculosDifNumerica1.calcularSegundaDerivada();
                 break;
-
             default:
                 break;
         }

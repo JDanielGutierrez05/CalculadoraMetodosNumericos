@@ -13,17 +13,16 @@ public class MenuFormulaAplicar {
 
         Scanner entradaEscaner = new Scanner(System.in);
         int opcionSeleccionada = Integer.parseInt(entradaEscaner.next());
-
+        CalcularMetodosDiferenciacionNum calculosDifNumerica = new CalcularMetodosDiferenciacionNum();
         switch (opcionSeleccionada) {
             case 1:
-                CalcularMetodosDiferenciacionNum calculosDifNumerica = new CalcularMetodosDiferenciacionNum();
                 calculosDifNumerica.calcularDerivadaTresPuntosF1();
                 break;
-
             case 2:
+                calculosDifNumerica.calcularDerivadaTresPuntosF2();
                 break;
-
             case 3:
+                calculosDifNumerica.calcularDerivadaTresPuntosF3();
                 break;
 
             default:
