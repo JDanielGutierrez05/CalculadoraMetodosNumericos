@@ -1,6 +1,7 @@
 package com.metodosnumericos;
 
 import com.metodosnumericos.diferenciacionnumerica.MenuDiferenciacionNumerica;
+import com.metodosnumericos.integracion.MenuSeleccionIntegracion;
 
 import java.util.Scanner;
 
@@ -13,6 +14,7 @@ public class Main {
         System.out.println("3. Metodo de Newton.");
         System.out.println("4. Metodo de la secante.");
         System.out.println("5. Metodos de diferenciacion numerica.");
+        System.out.println("6. Metodos de integracion.");
 
         Scanner entradaEscaner = new Scanner(System.in);
         int opcionSeleccionada = Integer.parseInt(entradaEscaner.next());
@@ -42,6 +44,12 @@ public class Main {
                 MenuDiferenciacionNumerica menuDiferenciacionNumerica = new MenuDiferenciacionNumerica();
                 menuDiferenciacionNumerica.selecionarMetodoDifNumerica();
                 break;
+
+            case 6:
+                MenuSeleccionIntegracion menuSeleccionIntegracion = new MenuSeleccionIntegracion();
+                menuSeleccionIntegracion.seleccionarMetodoIntegracion();
+                break;
+
             default:
                 break;
         }
