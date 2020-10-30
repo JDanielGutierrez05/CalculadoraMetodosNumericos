@@ -18,11 +18,11 @@ public class MetodoSimpson {
         Scanner entradaEscaner = new Scanner(System.in);
         funcion = entradaEscaner.nextLine().toLowerCase().trim();
 
-        System.out.println("Por favor introduzca el valor inicial del intervalo: ");
+        System.out.println("Por favor introduzca el valor de a: ");
         entradaEscaner = new Scanner(System.in);
         valorAIntervalo = Double.parseDouble(entradaEscaner.next());
 
-        System.out.println("Por favor introduzca el valor final del intervalo: ");
+        System.out.println("Por favor introduzca el valor de b: ");
         entradaEscaner = new Scanner(System.in);
         valorBIntervalo = Double.parseDouble(entradaEscaner.next());
 
@@ -32,9 +32,9 @@ public class MetodoSimpson {
 
         h = (valorBIntervalo - valorAIntervalo) / n;
         valorIntervalotemporal = valorAIntervalo;
-        sumatoriaFunciones += f(funcion, valorAIntervalo);
+        sumatoriaFunciones += f(funcion, valorIntervalotemporal);
 
-        System.out.println("Valor de n: 1," + " funcion: " + f(funcion, valorAIntervalo));
+        System.out.println("Valor de n: 1," + " funcion: " + f(funcion, valorIntervalotemporal));
 
         for (int i = 2; i < n; i++) {
             valorIntervalotemporal += h;
