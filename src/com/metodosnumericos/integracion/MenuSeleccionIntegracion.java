@@ -1,7 +1,5 @@
 package com.metodosnumericos.integracion;
 
-import com.metodosnumericos.MetodoBiseccion;
-import com.metodosnumericos.MetodoReglaFalsa;
 
 import java.util.Scanner;
 

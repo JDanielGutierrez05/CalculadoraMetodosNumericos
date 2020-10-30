@@ -36,7 +36,7 @@ public class MetodoSimpson {
 
         System.out.println("Valor de n: 1," + " funcion: " + f(funcion, valorIntervalotemporal));
 
-        for (int i = 2; i < n; i++) {
+        for (int i = 1; i < n; i++) {
             valorIntervalotemporal += h;
             if (i % 2 == 0) {
                 sumatoriaFunciones += (2 * f(funcion, valorIntervalotemporal));
@@ -48,7 +48,7 @@ public class MetodoSimpson {
         }
         System.out.println("Valor de n: " + n + ", funcion: " + f(funcion, valorBIntervalo));
         sumatoriaFunciones += f(funcion, valorBIntervalo);
-        System.out.println("la solucion al ejercicio es: " + (h / n) * sumatoriaFunciones);
+        System.out.println("la solucion al ejercicio es: " + (h / 3) * sumatoriaFunciones);
     }
 
     private double f(String funcion, double valor) {
