@@ -34,7 +34,7 @@ public class MetodoSimpson {
         valorIntervalotemporal = valorAIntervalo;
         sumatoriaFunciones += f(funcion, valorIntervalotemporal);
 
-        System.out.println("Valor de n: 1," + " funcion: " + f(funcion, valorIntervalotemporal));
+        System.out.println("Valor de n: 0," + " funcion: " + f(funcion, valorIntervalotemporal));
 
         for (int i = 1; i < n; i++) {
             valorIntervalotemporal += h;
