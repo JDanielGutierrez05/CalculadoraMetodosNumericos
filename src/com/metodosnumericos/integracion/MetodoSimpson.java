@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class MetodoSimpson {
 
-    double valorAIntervalo, valorBIntervalo, h;
+    double valorAIntervalo, valorBIntervalo, h, sumatoriaFunciones, valorIntervalotemporal;
     String funcion;
     int n;
 
@@ -17,7 +17,7 @@ public class MetodoSimpson {
         System.out.println("Por favor ingrese la funcion: ");
         Scanner entradaEscaner = new Scanner(System.in);
         funcion = entradaEscaner.nextLine().toLowerCase().trim();
-        
+
         System.out.println("Por favor introduzca el valor inicial del intervalo: ");
         entradaEscaner = new Scanner(System.in);
         valorAIntervalo = Double.parseDouble(entradaEscaner.next());
@@ -31,7 +31,24 @@ public class MetodoSimpson {
         n = Integer.parseInt(entradaEscaner.next());
 
         h = (valorBIntervalo - valorAIntervalo) / n;
+        valorIntervalotemporal = valorAIntervalo;
+        sumatoriaFunciones += f(funcion, valorAIntervalo);
 
+        System.out.println("Valor de n: 1," + " funcion: " + f(funcion, valorAIntervalo));
+
+        for (int i = 2; i < n; i++) {
+            valorIntervalotemporal += h;
+            if (i % 2 == 0) {
+                sumatoriaFunciones += (2 * f(funcion, valorIntervalotemporal));
+                System.out.println("Valor de n: " + i + ", funcion: " + f(funcion, valorIntervalotemporal));
+            } else {
+                sumatoriaFunciones += (4 * f(funcion, valorIntervalotemporal));
+                System.out.println("Valor de n: " + i + ", funcion: " + f(funcion, valorIntervalotemporal));
+            }
+        }
+        System.out.println("Valor de n: " + n + ", funcion: " + f(funcion, valorBIntervalo));
+        sumatoriaFunciones += f(funcion, valorBIntervalo);
+        System.out.println("la solucion al ejercicio es: " + (h / n) * sumatoriaFunciones);
     }
 
     private double f(String funcion, double valor) {
